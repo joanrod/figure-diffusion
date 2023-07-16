@@ -35,21 +35,21 @@ data:
     train:
       target: taming.data.custom.CustomTrain
       params:
-        training_images_list_file: /mnt/colab_public/datasets/joan/arxiv/Paper2Fig100k/paper2fig1_img_train.txt
+        training_images_list_file: <path/to/paper2fig1_img_train.txt>
         size: 384
         random_crop: true
         augment: true
     validation:
       target: taming.data.custom.CustomTest
       params:
-        test_images_list_file: /mnt/colab_public/datasets/joan/arxiv/Paper2Fig100k/paper2fig1_img_test.txt
+        test_images_list_file: <path/to/paper2fig1_img_test.txt>
         size: 384
         random_crop: false
         augment: false
     test:
       target: taming.data.custom.CustomTest
       params:
-        test_images_list_file: /mnt/colab_public/datasets/joan/arxiv/Paper2Fig100k/paper2fig1_img_test.txt
+        test_images_list_file: <path/to/paper2fig1_img_test.txt>
         size: 384
         random_crop: false
         augment: false
