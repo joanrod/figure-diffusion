@@ -29,15 +29,28 @@ and activate it:
 
 ```bash
 conda env create -f environment.yaml
-conda activate figgen
+conda activate figure-diffusion
 pip install -e .
 ```
 
-# Training
+## Download data and models
+1. Download **Paper2Fig100k dataset** from [Zenodo](https://zenodo.org/record/7299423) and extract it in a `data` folder. Download the trained models from [HuggingFace](https://huggingface.co/joanrodai) and extract them in a `models` folder. You will need the image encoder and the diffusion model.
 
-# Inference
+Modify the config files in `configs/figure-diffusion/fig-gen-{...}.yaml` to point to the correct paths. You must change the `ckpt_path` (in `model.first_stage_config`) and `json_file` (in `data`) with the corrsponding paths.
 
-# Results
+## Training
+
+To train the latent diffusion model from scratch, run the following command:
+
+```bash 
+python main.py --config configs/figure-diffusion/fig-gen-{...}.yaml 
+```
+
+
+## Inference
+
+## Results
+Some qualitative results of our model. We show the text description of the figure, the generated figure, and the ground truth figure. Check the paper for more results.
 <p align="center">
   <a href="https://arxiv.org/abs/2306.00800"><img src="assets/qualitative1.png" alt="qualitative results" width="600" border="0"></a>
 </p>
